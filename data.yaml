@@ -1,0 +1,8 @@
+names:
+  0: Apple
+  1: Banana
+  2: Orange
+  3: pomegranate
+path: D:\Tronix project codes\Fruits nutritions detection\yolo_dataset
+train: train/images
+val: val/images

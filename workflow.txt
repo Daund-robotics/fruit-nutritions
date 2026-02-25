@@ -1,0 +1,35 @@
+# Fruit Detection and Ripeness Workflow
+
+This project is designed to detect fruits using AI (YOLOv8) and identify their condition (Ripe, Underripe, Overripe). 
+
+## 1. Project Overview
+The system uses YOLOv8 for detecting common fruits. If a fruit is not in the default AI model, or if you want to teach it specific ripeness conditions, you can use the "Add Data" tool.
+
+## 2. File Structure
+- `main_data_creation.py`: The main control center for adding new fruits and testing recognition.
+- `main.py`: A simplified version for just recognizing fruits (no data adding option).
+- `utils.py`: Contains the "brain" - AI detection logic and color analysis for ripeness.
+- `database.json`: A simple file that remembers the fruits you've added manually.
+- `data/`: Folder where captured images are stored.
+
+## 3. How to use (Workflow)
+
+### Step A: Adding New Data (Training)
+1. Run `main_data_creation.py` and select **Add Data**.
+2. Point your camera at a fruit. You will see a blue box tracking it.
+3. Enter the **Fruit Name** (e.g., Mango) and **Condition** (e.g., Ripe).
+4. Click **Capture** to take several pictures.
+5. Click **Save** to store this info. **Note**: Training will now start **instantly and automatically** as soon as you hit save!
+6. **Automatic Training**: The system will fine-tune the AI specifically for your fruits. Once finished, it will save as `best.pt`.
+
+### Step B: Recognition
+1. In `main_data_creation.py` (Recognize mode) or `main.py`:
+2. The camera will show the fruit.
+3. The AI will first check if it "knows" this fruit from its default model.
+4. If you've manually trained it, it will show the name and condition from your database.
+5. It identifies ripeness based on the color and patterns it sees.
+
+## 4. Simple Explanation of Ripeness Identification
+- **Ripe**: Perfect color (e.g., bright yellow for bananas).
+- **Underripe**: Usually green or hard.
+- **Overripe/Not Eatable**: Brown spots, dark colors, or bruised appearance.

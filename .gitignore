@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Models and Training
+*.pt
+runs/
+fruit_runs/
+yolo_dataset/
+data/
+
+# Data
+database.json
+nutrition_data.json
+
+# IDE
+.vscode/
+.idea/
